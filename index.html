@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <link rel="icon" type="image/svg+xml" href="assets/nearbyfun-icon.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NearbyFun</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <header class="app-header">
+        <h1>NearbyFun</h1>
+        <div class="controls">
+            <input id="q" type="search" placeholder="מה מחפשים? (לדוגמה: פארק, באולינג)" />
+            <select id="type">
+                <option value="">סוג (אופציונלי)</option>
+                <option value="tourist_attraction">אטרקציות</option>
+                <option value="park">פארק</option>
+                <option value="movie_theater">קולנוע</option>
+                <option value="restaurant">מסעדה</option>
+                <option value="amusement_park">לונה פארק</option>
+                <option value="bowling_alley">באולינג</option>
+                <option value="gym">חדר כושר</option>
+            </select>
+            <label class="radius">
+                רדיוס: <span id="radiusLabel">1500</span> מ׳
+                <input id="radius" type="range" min="500" max="5000" step="100" value="1500" />
+            </label>
+            <button id="useLocation">המיקום שלי</button>
+            <button id="searchBtn">חפש</button>
+            <button id="toggleFavs">מועדפים</button>
+        </div>
+    </header>
+
+    <main class="layout">
+        <aside class="sidebar">
+            <ul id="results" class="results"></ul>
+        </aside>
+        <section class="map-wrap">
+            <div id="map" class="map"></div>
+            <div id="placePanel" class="place-panel hidden">
+                <button id="closePanel" class="close">✕</button>
+                <div id="placeContent"></div>
+            </div>
+        </section>
+    </main>
+
+    <template id="resultItemTpl">
+        <li class="result-item">
+            <div class="top">
+                <strong class="name"></strong>
+                <button class="favBtn" title="הוסף למועדפים">☆</button>
+            </div>
+            <div class="meta">
+                <span class="distance"></span>
+                <span class="rating"></span>
+            </div>
+            <small class="address"></small>
+        </li>
+    </template>
+
+    <script>
+        window.__NEARBYFUN_READY__ = false
+        window.__NEARBYFUN_BOOT__ = function () { window.__NEARBYFUN_READY__ = true; }
+    </script>
+
+    <script type="module" src="./js/app.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDV9fjU-Mk0sA3qkQ9z_9o9k2tKoVj6WE4&libraries=places&callback=__NEARBYFUN_BOOT__&loading=async&v=weekly">
+        </script>
+</body>
+
+</html>

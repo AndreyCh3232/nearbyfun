@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 256 256" role="img" aria-label="NearbyFun app icon">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00C2FF"/>
+      <stop offset="100%" stop-color="#1565FF"/>
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#003a9b" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Pin -->
+  <path d="M128 16c-44.18 0-80 35.82-80 80 0 52 80 152 80 152s80-100 80-152c0-44.18-35.82-80-80-80z"
+        fill="url(#g)" filter="url(#shadow)"/>
+
+  <!-- Subtle inner ring -->
+  <circle cx="128" cy="96" r="44" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="6"/>
+
+  <!-- Fun spark/star -->
+  <path d="M128 74l9 18 19 5-19 5-9 18-9-18-19-5 19-5z" fill="#ffffff"/>
+
+  <!-- Tiny sparkle accent -->
+  <circle cx="162" cy="56" r="6" fill="#ffffff" opacity="0.9"/>
+</svg>
