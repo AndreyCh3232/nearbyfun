@@ -163,7 +163,7 @@ textarea {
     margin-top: 0.5rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 430px) {
     .layout {
         grid-template-columns: 1fr;
     }
@@ -174,5 +174,19 @@ textarea {
 
     .map {
         height: 60vh;
+    }
+}
+
+@media (max-width: 920px) and (orientation: landscape) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        height: 35vh;
+    }
+
+    .map {
+        height: 65vh;
     }
 }
