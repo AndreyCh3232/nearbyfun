@@ -164,6 +164,17 @@ textarea {
 }
 
 @media (max-width: 430px) {
+
+    html,
+    body {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .app-header h1 {
+        margin: 0 -12px;
+    }
+
     .layout {
         grid-template-columns: 1fr;
     }
@@ -178,6 +189,7 @@ textarea {
 }
 
 @media (max-width: 920px) and (orientation: landscape) {
+
     .layout {
         grid-template-columns: 1fr;
     }
